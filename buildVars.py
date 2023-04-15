@@ -25,7 +25,7 @@ addon_info = {
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 	"addon_description": _("""让 NVDA 更新使用 NVDA 中文社区提供的镜像源，加快 NVDA 的更新下载速度。"""),
 	# version
-	"addon_version": "0.3.0",
+	"addon_version": "0.3.2",
 	# Author(s)
 	"addon_author": "好奇的 01, NVDACN <www.nvdacn.com>",
 	# URL for the add-on documentation support
