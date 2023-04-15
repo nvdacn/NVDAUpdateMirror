@@ -7,12 +7,12 @@ import globalPluginHandler
 import updateCheck
 from   logHandler   import   log
 
-MIRROR_CHECK_UPDATE_URL = "https://nvaccess.mirror.viyf.org/nvdaUpdateCheck"
+MIRROR_CHECK_UPDATE_URL = "https://nvaccess.mirror.nvdadr.com/nvdaUpdateCheck"
 
 PRIVACY_STATEMENT = """VIYF 镜像源更新服务
-加速 NVDA 更新下载速度，改善您的体验。
-我们不收集和存储您的任何信息，您的更新请求都会按原样转送给 NVAccess 处理。
-https://www.viyf.org/
+本镜像源更新服务，旨在加速 NVDA 的更新速度，为 NVDA 中文用户提供更好的使用体验。
+请放心使用，我们不会收集或存储您的任何信息。您的更新请求都会按照原样转送给 NV Access 进行处理。
+https://www.nvdacn.com/
 """
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
