@@ -25,9 +25,9 @@ addon_info = {
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 	"addon_description": _("""让 NVDA 更新使用 NVDA 中文社区提供的镜像源，加快 NVDA 的更新下载速度。"""),
 	# version
-	"addon_version": "0.3.2",
+	"addon_version": "0.4.0",
 	# Author(s)
-	"addon_author": "好奇的 01, NVDACN <www.nvdacn.com>",
+	"addon_author": "Cary-rowen, 好奇的 01 <www.nvdacn.com>",
 	# URL for the add-on documentation support
 	"addon_url": "https://www.nvdacn.com/",
 	# URL for the add-on repository where the source code can be found
@@ -37,7 +37,7 @@ addon_info = {
 	# Minimum NVDA version supported (e.g. "2018.3.0", minor version is optional)
 	"addon_minimumNVDAVersion": "2022.1.0",
 	# Last NVDA version supported/tested (e.g. "2018.4.0", ideally more recent than minimum version)
-	"addon_lastTestedNVDAVersion": "2023.1.0",
+	"addon_lastTestedNVDAVersion": "2023.2.0",
 	# Add-on update channel (default is None, denoting stable releases,
 	# and for development releases, use "dev".)
 	# Do not change unless you know what you are doing!
