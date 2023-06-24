@@ -16,7 +16,7 @@ if (current_version_year, current_version_major) >= (REQUIRED_VERSION_YEAR, REQU
     except ModuleNotFoundError:
         isSupported = False
 else:
-    isSupported = True
+    isSupported = False
 
 MIRROR_CHECK_UPDATE_URL = "https://nvaccess.mirror.nvdadr.com/nvdaUpdateCheck"
 MIRROR_STORE_URL = "https://nvaccess.mirror.nvdadr.com/addonStore/"
