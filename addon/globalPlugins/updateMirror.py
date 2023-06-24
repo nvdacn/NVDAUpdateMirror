@@ -1,26 +1,39 @@
 # NVDA Update Mirror
 # A global plugin for NVDA
-# Copyright 2023 好奇的01<zhyx-work@outlook.com>
+# Copyright 2023 Cary-Rowen <manchen_0528@outlook.com>, 好奇的01 <zhyx-work@outlook.com>
 # Released under GPL.
 
 import globalPluginHandler
 import updateCheck
-from   logHandler   import   log
+import versionInfo
+REQUIRED_VERSION_YEAR, REQUIRED_VERSION_MAJOR= 2023, 2
+current_version_year, current_version_major = versionInfo.version_year, versionInfo.version_major
+
+if (current_version_year, current_version_major) >= (REQUIRED_VERSION_YEAR, REQUIRED_VERSION_MAJOR):
+    try:
+        import _addonStore.dataManager
+        isSupported = True
+    except ModuleNotFoundError:
+        isSupported = False
+else:
+    isSupported = True
 
 MIRROR_CHECK_UPDATE_URL = "https://nvaccess.mirror.nvdadr.com/nvdaUpdateCheck"
+MIRROR_STORE_URL = "https://nvaccess.mirror.nvdadr.com/addonStore/"
 
-PRIVACY_STATEMENT = """VIYF 镜像源更新服务
-本镜像源更新服务，旨在加速 NVDA 的更新速度，为 NVDA 中文用户提供更好的使用体验。
-请放心使用，我们不会收集或存储您的任何信息。您的更新请求都会按照原样转送给 NV Access 进行处理。
-https://www.nvdacn.com/
-"""
+def _getAddonStoreURLMirror(channel, lang: str, nvdaApiVersion: str) -> str:
+	return MIRROR_STORE_URL + f"{lang}/{channel.value}/{nvdaApiVersion}.json"
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def __init__(self):
-		super(GlobalPlugin, self).__init__()
-		log.info(PRIVACY_STATEMENT)
-		self.originalUrl = updateCheck.CHECK_URL
+		super().__init__()
+		self.originalURL = updateCheck.CHECK_URL
 		updateCheck.CHECK_URL = MIRROR_CHECK_UPDATE_URL
+		if isSupported:
+			self.original_getAddonStoreURL = _addonStore.dataManager._getAddonStoreURL
+			_addonStore.dataManager._getAddonStoreURL = _getAddonStoreURLMirror
 
 	def terminate(self):
-		updateCheck.CHECK_URL = self.originalUrl
+		updateCheck.CHECK_URL = self.originalURL
+		if isSupported:
+			_addonStore.dataManager._getAddonStoreURL = self.original_getAddonStoreURL
