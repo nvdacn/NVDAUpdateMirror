@@ -1,0 +1,39 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 'NVDACNMirror' '0.5'\n"
+"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
+"POT-Creation-Date: 2023-07-30 05:14+0800\n"
+"PO-Revision-Date: 2023-07-30 05:18+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.3.2\n"
+
+#. Add-on summary, usually the user visible name of the addon.
+#. Translators: Summary for this add-on
+#. to be shown on installation and add-on information found in Add-ons Manager.
+#: buildVars.py:23
+msgid "NVDA Chinese Community Update Mirror"
+msgstr "NVDA 中文社区镜像源"
+
+#. Add-on description
+#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+#: buildVars.py:26
+msgid ""
+"This update mirror source is provided for NVDA Chinese community users.\n"
+"It can enhance the update speed of NVDA, improve the search and download "
+"speed of the add-on store, and resolve issues where certain network "
+"operators are unable to download add-ons from the add-on store, thus "
+"effectively improving user experience."
+msgstr ""
+"为 NVDA 中文社区用户提供的更新镜像源。\n"
+"可提高 NVDA 的更新速度，可提升插件商店的检索和下载速度，能解决个别运营商"
+"网络无法从插件商店下载插件的问题，从而有效提升用户体验。"

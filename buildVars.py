@@ -20,14 +20,15 @@ addon_info = {
 	# Add-on summary, usually the user visible name of the addon.
 	# Translators: Summary for this add-on
 	# to be shown on installation and add-on information found in Add-ons Manager.
-	"addon_summary": _("NVDA 中文社区更新镜像源"),
+	"addon_summary": _("NVDA Chinese Community Update Mirror"),
 	# Add-on description
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-	"addon_description": _("""让 NVDA 更新使用 NVDA 中文社区提供的镜像源，加快 NVDA 的更新下载速度。"""),
+	"addon_description": _("""This update mirror source is provided for NVDA Chinese community users.
+It can enhance the update speed of NVDA, improve the search and download speed of the add-on store, and resolve issues where certain network operators are unable to download add-ons from the add-on store, thus effectively improving user experience."""),
 	# version
-	"addon_version": "0.4.1",
+	"addon_version": "0.5.0",
 	# Author(s)
-	"addon_author": "Cary-rowen, 好奇的 01 <www.nvdacn.com>",
+	"addon_author": "zh-yx, Cary-rowen, hwf1324 <support@nvdacn.com>",
 	# URL for the add-on documentation support
 	"addon_url": "https://www.nvdacn.com/",
 	# URL for the add-on repository where the source code can be found
@@ -68,7 +69,7 @@ excludedFiles = []
 # Base language for the NVDA add-on
 # If your add-on is written in a language other than english, modify this variable.
 # For example, set baseLanguage to "es" if your add-on is primarily written in spanish.
-baseLanguage = "zh_CN"
+baseLanguage = "en"
 
 # Markdown extensions for add-on documentation
 # Most add-ons do not require additional Markdown extensions.

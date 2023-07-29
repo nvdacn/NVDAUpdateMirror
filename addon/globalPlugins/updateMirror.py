@@ -1,7 +1,6 @@
-# NVDA Update Mirror
-# A global plugin for NVDA
-# Copyright 2023 Cary-Rowen <manchen_0528@outlook.com>, 好奇的01 <zhyx-work@outlook.com>
-# Released under GPL.
+# Chinese Community Update Mirror for NVDA
+# Copyright 2022-2023 Cary-Rowen <manchen_0528@outlook.com>, zh-yx <zhyx-work@outlook.com>
+# released under GPL.
 
 import globalPluginHandler
 import updateCheck
