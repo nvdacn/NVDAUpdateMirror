@@ -32,8 +32,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		if isSupported:
 			self.original_getAddonStoreURL = _addonStore.dataManager._getAddonStoreURL
 			_addonStore.dataManager._getAddonStoreURL = _getAddonStoreURLMirror
+			_addonStore.dataManager.initialize()
 
 	def terminate(self):
 		updateCheck.CHECK_URL = self.originalURL
 		if isSupported:
 			_addonStore.dataManager._getAddonStoreURL = self.original_getAddonStoreURL
+			_addonStore.dataManager.initialize()
