@@ -22,27 +22,18 @@ else:
     isSupported = False
 
 
-def _getAddonStoreURLMirror(channel, lang: str, nvdaApiVersion: str) -> str:
-	return MIRROR_STORE_URL + f"{lang}/{channel.value}/{nvdaApiVersion}.json"
-
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def __init__(self):
 		super().__init__()
 		self.originalURL = updateCheck.CHECK_URL
 		updateCheck.CHECK_URL = MIRROR_CHECK_UPDATE_URL
 		if isSupported:
-			self.original_getAddonStoreURL = _addonStore.dataManager._getAddonStoreURL
-			_addonStore.dataManager._getAddonStoreURL = _getAddonStoreURLMirror
+			self.original_BASE_URL = _addonStore.network._BASE_URL
+			_addonStore.network._BASE_URL = MIRROR_STORE_URL
 			_addonStore.dataManager.initialize()
-			from gui._addonStoreGui.viewModels.store import AddonStoreVM
-			_storeVM = AddonStoreVM()
-			_storeVM.refresh()
 
 	def terminate(self):
 		updateCheck.CHECK_URL = self.originalURL
 		if isSupported:
-			_addonStore.dataManager._getAddonStoreURL = self.original_getAddonStoreURL
+			_addonStore.network._BASE_URL = self.original_BASE_URL
 			_addonStore.dataManager.initialize()
-			from gui._addonStoreGui.viewModels.store import AddonStoreVM
-			_storeVM = AddonStoreVM()
-			_storeVM.refresh()
