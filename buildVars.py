@@ -26,7 +26,7 @@ addon_info = {
 	"addon_description": _("""This update mirror source is provided for NVDA Chinese community users.
 It can enhance the update speed of NVDA, improve the search and download speed of the add-on store, and resolve issues where certain network operators are unable to download add-ons from the add-on store, thus effectively improving user experience."""),
 	# version
-	"addon_version": "0.5.1",
+	"addon_version": "0.5.2",
 	# Author(s)
 	"addon_author": "zh-yx, Cary-rowen, hwf1324 <support@nvdacn.com>",
 	# URL for the add-on documentation support
