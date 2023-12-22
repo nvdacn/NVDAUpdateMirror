@@ -6,7 +6,6 @@ import globalPluginHandler
 import updateCheck
 import versionInfo
 
-from ..installTasks import deleteAddonStoreCache
 
 MIRROR_CHECK_UPDATE_URL = "https://nvaccess.mirror.nvdadr.com/nvdaUpdateCheck"
 MIRROR_STORE_URL = "https://nvaccess.mirror.nvdadr.com/addonStore/"
@@ -37,7 +36,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			self.original_BASE_URL = BASE_URL
 			BASE_URL = MIRROR_STORE_URL
 			dataManager.initialize()
-			deleteAddonStoreCache()
 
 	def terminate(self):
 		updateCheck.CHECK_URL = self.originalURL
