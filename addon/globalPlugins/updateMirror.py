@@ -14,19 +14,13 @@ REQUIRED_API_VERSION = (2004, 1)
 current_api_version = (versionInfo.version_year, versionInfo.version_major)
 
 if current_api_version >= REQUIRED_API_VERSION:
-	try:
-		from addonStore import dataManager
-		from addonStore.network import BASE_URL
-		isSupported = True
-	except ModuleNotFoundError:
-		isSupported = False
+	from addonStore import dataManager
+	from addonStore.network import BASE_URL
+	isSupported = True
 elif current_api_version >= REQUIRED_PRIVATE_API_VERSION:
-	try:
-		from _addonStore import dataManager
-		from _addonStore.network import _BASE_URL as BASE_URL
-		isSupported = True
-	except ModuleNotFoundError:
-		isSupported = False
+	from _addonStore import dataManager
+	from _addonStore.network import _BASE_URL as BASE_URL
+	isSupported = True
 else:
 	isSupported = False
 
