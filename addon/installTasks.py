@@ -1,11 +1,13 @@
 import addonHandler
 import os
 import shutil
-import globalVars
+import NVDAState
 import json
 from logHandler import log
 
-json_file_path = os.path.join(globalVars.appArgs.configPath, "addonStore", "_cachedCompatibleAddons.json")
+json_file_path = os.path.join(NVDAState.WritePaths.addonStoreDir, "_cachedCompatibleAddons.json")
+
+
 def deleteAddonStoreCache():
 	try:
 		with open(json_file_path, 'r') as json_file:
@@ -18,12 +20,14 @@ def deleteAddonStoreCache():
 	except Exception as e:
 		log.error(f"Add-on store cache deletion failed: {e}")
 
+
 def onInstall():
 	deleteAddonStoreCache()
 	for addon in addonHandler.getAvailableAddons():
 		if addon.name == "viyfMirror":
 			addon.requestRemove()
 			break
+
 
 def onUninstall():
 	# Delete mirror cache
