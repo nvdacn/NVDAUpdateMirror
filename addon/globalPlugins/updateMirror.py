@@ -15,7 +15,7 @@ from logHandler import log
 MIRROR_CHECK_UPDATE_URL: str = "https://nvaccess.mirror.nvdadr.com/nvdaUpdateCheck"
 MIRROR_STORE_URL: str = "https://nvaccess.mirror.nvdadr.com/addonStore/"
 REQUIRED_PRIVATE_API_VERSION: tuple = (2023, 2)
-REQUIRED_API_VERSION: tuple = (2004, 1)
+REQUIRED_API_VERSION: tuple = (2024, 1)
 
 CURRENT_API_VERSION: tuple = (versionInfo.version_year, versionInfo.version_major)
 JSON_FILE_PATH: str = os.path.join(NVDAState.WritePaths.addonStoreDir, "_cachedCompatibleAddons.json")
