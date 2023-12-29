@@ -40,6 +40,7 @@ def deleteAddonStoreCache(check_mirror: bool = True) -> None:
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def __init__(self):
+		super().__init__()
 		log.info(f"Set the NVDA update mirror to: {MIRROR_CHECK_UPDATE_URL}")
 		self.originalURL = updateCheck.CHECK_URL
 		updateCheck.CHECK_URL = MIRROR_CHECK_UPDATE_URL
