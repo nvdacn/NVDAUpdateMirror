@@ -60,9 +60,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			from _addonStore import dataManager, network
 			originalURL = network._BASE_URL
 			network._BASE_URL = URL
-
-		dataManager.initialize()
 		deleteAddonStoreCache()
+		dataManager.initialize()
 		return originalURL
 
 	def terminate(self):
