@@ -12,8 +12,8 @@ import updateCheck
 import versionInfo
 from logHandler import log
 
-MIRROR_CHECK_UPDATE_URL: str = "https://nvaccess.mirror.nvdadr.com/nvdaUpdateCheck"
-MIRROR_STORE_URL: str = "https://nvaccess.mirror.nvdadr.com/addonStore/"
+MIRROR_CHECK_UPDATE_URL: str = "https://api.nvaccess.mirror.nvdadr.com/nvdaUpdateCheck"
+MIRROR_STORE_URL: str = "https://addonstore.nvaccess.mirror.nvdadr.com"
 REQUIRED_PRIVATE_API_VERSION: tuple = (2023, 2)
 REQUIRED_API_VERSION: tuple = (2024, 1)
 
