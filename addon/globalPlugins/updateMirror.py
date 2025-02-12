@@ -2,12 +2,7 @@
 # Copyright 2022-2023 Cary-Rowen <manchen_0528@outlook.com>, zh-yx <zhyx-work@outlook.com>
 # released under GPL.
 
-import json
-import os.path
-import shutil
-
 import globalPluginHandler
-import NVDAState
 import updateCheck
 import versionInfo
 from logHandler import log
@@ -16,27 +11,7 @@ MIRROR_CHECK_UPDATE_URL: str = "https://api.nvaccess.mirror.nvdadr.com/nvdaUpdat
 MIRROR_STORE_URL: str = "https://addonstore.nvaccess.mirror.nvdadr.com"
 REQUIRED_PRIVATE_API_VERSION: tuple = (2023, 2)
 REQUIRED_API_VERSION: tuple = (2024, 1)
-
 CURRENT_API_VERSION: tuple = (versionInfo.version_year, versionInfo.version_major)
-JSON_FILE_PATH: str = os.path.join(NVDAState.WritePaths.addonStoreDir, "_cachedCompatibleAddons.json")
-
-
-def deleteAddonStoreCache(check_mirror: bool = True) -> None:
-	if os.path.exists(JSON_FILE_PATH):
-		try:
-			if check_mirror:
-				with open(JSON_FILE_PATH, 'r') as json_file:
-					data = json.load(json_file)
-				if "data" in data:
-					data = json.loads(data["data"])
-					url = data[0]["URL"]
-					if isinstance(url, str) and "https://github.mirror.nvdadr.com" in url:
-						return
-			log.info("Delete old add-on store cache.")
-			shutil.rmtree(NVDAState.WritePaths.addonStoreDir)
-		except Exception as e:
-			log.error(f"Add-on store cache deletion failed: {e}")
-
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def __init__(self):
@@ -60,7 +35,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			from _addonStore import dataManager, network
 			originalURL = network._BASE_URL
 			network._BASE_URL = URL
-		deleteAddonStoreCache()
 		dataManager.initialize()
 		return originalURL
 
@@ -70,5 +44,3 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		if CURRENT_API_VERSION >= REQUIRED_PRIVATE_API_VERSION:
 			log.info(f"Restore the Add-on store URL to: {self.original_BASE_URL}")
 			self.swapNetworkBaseURL(self.original_BASE_URL)
-			# Delete mirror cache
-			deleteAddonStoreCache(check_mirror=False)
