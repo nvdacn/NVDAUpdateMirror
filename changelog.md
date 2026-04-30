@@ -1,4 +1,3 @@
-### 0.7.2
+### 0.7.3
 
-* Compatible with NVDA2025.1
-* Update add-on template
+Bump version, compatible with NVDA 2026.1.0.
