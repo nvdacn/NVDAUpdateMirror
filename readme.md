@@ -2,7 +2,7 @@
 
 ## Introduction
 
-NonVisual Desktop Access ([NVDA]) is a free and open source screen reader for the Microsoft Windows operating system. 
+NonVisual Desktop Access ([NVDA]) is a free and open source screen reader for the Microsoft Windows operating system.
 
 This update mirror source is provided for NVDA Chinese community users. It can enhance the update speed of NVDA, improve the search and download speed of the add-on store, and resolve issues where certain network operators are unable to download add-ons from the add-on store, thus effectively improving user experience.
 
